@@ -34,4 +34,33 @@ const getActivities = async (req, res) => {
     }
 };
 
-module.exports = { logPageVisit, getActivities };
+const exportLogsCSV = async (req, res) => {
+    try {
+        const activities = await UserActivity.find().sort({ timestamp: -1 });
+
+        // Define CSV Headers
+        const headers = ['Timestamp (IST)', 'User Name', 'Action', 'Details', 'IP Address'];
+        const rows = activities.map(log => {
+            const dateIST = new Date(log.timestamp).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
+            return [
+                dateIST,
+                log.userName,
+                log.action,
+                JSON.stringify(log.details || {}).replace(/,/g, ';'), // Escape commas for CSV
+                log.ipAddress || 'Unknown'
+            ].join(',');
+        });
+
+        const csvContent = [headers.join(','), ...rows].join('\n');
+
+        res.setHeader('Content-Type', 'text/csv');
+        res.setHeader('Content-Disposition', `attachment; filename=SolarGov_Audit_Logs_${Date.now()}.csv`);
+        res.status(200).send(csvContent);
+
+    } catch (err) {
+        console.error("Export Error:", err);
+        res.status(500).send("Failed to export logs");
+    }
+};
+
+module.exports = { logPageVisit, getActivities, exportLogsCSV };

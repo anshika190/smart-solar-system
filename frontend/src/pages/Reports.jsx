@@ -186,22 +186,7 @@ const Reports = () => {
                 {/* Search & Admin Actions */}
                 <div style={{ display: 'flex', gap: '1rem' }}>
 
-                    {/* Admin CSV Download Button */}
-                    {user && user.role === 'admin' && (
-                        <button onClick={downloadActivityLogs} className="glass-card"
-                            style={{
-                                padding: '0.75rem 1.5rem', display: 'flex', alignItems: 'center', gap: '1rem',
-                                borderRadius: '12px', border: '1px solid rgba(16, 185, 129, 0.3)',
-                                background: 'rgba(16, 185, 129, 0.1)', color: '#4ade80', cursor: 'pointer',
-                                transition: 'all 0.2s'
-                            }}
-                            onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(16, 185, 129, 0.2)'}
-                            onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(16, 185, 129, 0.1)'}
-                        >
-                            <Shield size={20} />
-                            <span style={{ fontWeight: '600' }}>Export Audit Logs</span>
-                        </button>
-                    )}
+                    {/* Admin CSV Download Button Removed - Moved to Secret Page */}
 
                     <div className="glass-card" style={{ padding: '0.75rem 1.5rem', display: 'flex', alignItems: 'center', gap: '1rem', borderRadius: '12px' }}>
                         <Search color="#64748b" size={20} />

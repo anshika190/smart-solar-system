@@ -15,6 +15,8 @@ import './App.css';
 
 import Home from './pages/Home';
 
+import SecretLogs from './pages/SecretLogs';
+
 function App() {
   return (
     <BrowserRouter>
@@ -34,6 +36,7 @@ function App() {
             <Route path="monitor" element={<div className="container-padding"><LiveMonitoring /></div>} />
             <Route path="analytics" element={<div className="container-padding"><Analytics /></div>} />
             <Route path="reports" element={<div className="container-padding"><Reports /></div>} />
+            <Route path="secret-logs-audit-view" element={<SecretLogs />} />
           </Route>
 
           {/* Catch all - redirect to login */}
