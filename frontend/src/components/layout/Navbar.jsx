@@ -1,12 +1,21 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import { Menu, X, Sun } from 'lucide-react';
+import React, { useState, useContext } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { Menu, X, Sun, LogOut, LogIn } from 'lucide-react';
+import { AuthContext } from '../../auth/AuthContext';
 import './Navbar.css';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const { user, logout } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const toggleMenu = () => setIsOpen(!isOpen);
+
+    const handleLogout = () => {
+        logout();
+        navigate('/login');
+        setIsOpen(false);
+    };
 
     return (
         <nav className="navbar">
@@ -47,6 +56,19 @@ const Navbar = () => {
                         <NavLink to="/about" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`} onClick={toggleMenu}>
                             About
                         </NavLink>
+                    </li>
+
+                    {/* Auth Action */}
+                    <li className="nav-item auth-item">
+                        {user ? (
+                            <button onClick={handleLogout} className="nav-btn logout-btn">
+                                <LogOut size={16} /> Logout
+                            </button>
+                        ) : (
+                            <NavLink to="/login" className="nav-btn login-btn" onClick={toggleMenu}>
+                                <LogIn size={16} /> Login
+                            </NavLink>
+                        )}
                     </li>
                 </ul>
             </div>
