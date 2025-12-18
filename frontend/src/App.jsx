@@ -4,7 +4,7 @@ import MainLayout from './components/layout/MainLayout';
 import LandingPage from './pages/LandingPage';
 import LiveMonitoring from './pages/LiveMonitoring';
 import Analytics from './pages/Analytics';
-import Reports from './pages/Reports';
+import SystemReports from './pages/SystemReports';
 import About from './pages/About';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -35,7 +35,7 @@ function App() {
             <Route path="home" element={<div className="container-padding"><Home /></div>} />
             <Route path="monitor" element={<div className="container-padding"><LiveMonitoring /></div>} />
             <Route path="analytics" element={<div className="container-padding"><Analytics /></div>} />
-            <Route path="reports" element={<div className="container-padding"><Reports /></div>} />
+            <Route path="reports" element={<div className="container-padding"><SystemReports /></div>} />
             <Route path="secret-logs-audit-view" element={<SecretLogs />} />
           </Route>
 
