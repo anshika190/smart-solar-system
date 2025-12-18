@@ -27,7 +27,7 @@ const Login = () => {
             // Login successful
             login(response.data.user);
             localStorage.setItem('token', response.data.token);
-            navigate('/home'); // Default to Dashboard after login
+            navigate('/monitor'); // Default to Dashboard after login
 
         } catch (err) {
             console.error("Login attempt failed:", err);
