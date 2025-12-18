@@ -1,0 +1,65 @@
+.main-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: transparent;
+    /* Let body background show through */
+}
+
+.main-content-area {
+    flex: 1;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+.footer {
+    background: rgba(2, 6, 23, 0.95);
+    /* Nearly solid dark */
+    color: var(--text-secondary);
+    padding: 3rem 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    /* Very subtle border */
+    margin-top: auto;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer-logo h4 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+    color: var(--primary);
+    /* Neon hover */
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}

@@ -1,0 +1,9 @@
+const express = require('express');
+const router = express.Router();
+const { logPageVisit, getActivities } = require('../controllers/activityController');
+const { protect, admin } = require('../middleware/authMiddleware');
+
+router.post('/log', logPageVisit);
+router.get('/all', protect, admin, getActivities);
+
+module.exports = router;

@@ -1,0 +1,34 @@
+
+> frontend@0.0.0 lint
+> eslint .
+
+
+C:\Users\Anshika Garg\smart-solar-system\frontend\src\auth\AuthContext.jsx
+  15:17  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  13 |         if (storedUser) {
+  14 |             try {
+> 15 |                 setUser(JSON.parse(storedUser));
+     |                 ^^^^^^^ Avoid calling setState() directly within an effect
+  16 |             } catch (e) {
+  17 |                 console.error("Failed to parse user data", e);
+  18 |                 localStorage.removeItem('user');  react-hooks/set-state-in-effect
+
+C:\Users\Anshika Garg\smart-solar-system\frontend\src\components\SolarSystemAnimation.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\Anshika Garg\smart-solar-system\frontend\src\pages\Analytics.jsx
+  125:27  error  Parsing error: Unexpected token )
+
+C:\Users\Anshika Garg\smart-solar-system\frontend\src\pages\LiveMonitoring.jsx
+    1:38  error    'useRef' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                                                    no-unused-vars
+  156:8   warning  React Hook useEffect has missing dependencies: 'runControlAlgorithms' and 'runStationLogic'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+Γ£û 5 problems (4 errors, 1 warning)
+

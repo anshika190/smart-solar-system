@@ -1,0 +1,66 @@
+
+> frontend@0.0.0 lint
+> eslint .
+
+
+C:\Users\Anshika Garg\smart-solar-system\frontend\src\auth\AuthContext.jsx
+   3:14  error  Fast refresh only works when a file only exports components. Move your React context(s) to a separate file                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             react-refresh/only-export-components
+  14:17  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  12 |         if (storedUser) {
+  13 |             try {
+> 14 |                 setUser(JSON.parse(storedUser));
+     |                 ^^^^^^^ Avoid calling setState() directly within an effect
+  15 |             } catch (e) {
+  16 |                 console.error("Failed to parse user data", e);
+  17 |                 localStorage.removeItem('user');  react-hooks/set-state-in-effect
+
+C:\Users\Anshika Garg\smart-solar-system\frontend\src\components\SolarSystemAnimation.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\Anshika Garg\smart-solar-system\frontend\src\pages\Analytics.jsx
+   10:12  error    'error' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                              no-unused-vars
+   93:18  error    'e' is defined but never used                                                                                      no-unused-vars
+   93:21  error    Empty block statement                                                                                              no-empty
+  102:18  error    'e' is defined but never used                                                                                      no-unused-vars
+  102:21  error    Empty block statement                                                                                              no-empty
+  125:18  error    'err' is defined but never used                                                                                    no-unused-vars
+  137:14  error    'err' is defined but never used                                                                                    no-unused-vars
+  142:44  warning  React Hook useEffect has a missing dependency: 'handleLocateMe'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Users\Anshika Garg\smart-solar-system\frontend\src\pages\LiveMonitoring.jsx
+    1:38  error    'useRef' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                                                    no-unused-vars
+  156:8   warning  React Hook useEffect has missing dependencies: 'runControlAlgorithms' and 'runStationLogic'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Users\Anshika Garg\smart-solar-system\frontend\src\pages\Reports.jsx
+  47:60  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  45 |                 const peak = 12;
+  46 |                 const dist = Math.abs(i - peak);
+> 47 |                 rawSolar = Math.max(0, (5 - dist * 0.8) * (Math.random() * 0.4 + 0.8));
+     |                                                            ^^^^^^^^^^^^^ Cannot call impure function
+  48 |             }
+  49 |
+  50 |             const solar = rawSolar.toFixed(2);                                                                                                                         react-hooks/purity
+  54:66  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  52 |             const battery = Math.min(100, Math.max(20, 50 + (rawSolar * 10) - (i > 18 ? (i - 18) * 5 : 0))).toFixed(0);
+  53 |
+> 54 |             rows += `${hour},${solar},${grid},${battery},${(90 + Math.random() * 5).toFixed(1)},${(25 + rawSolar * 4).toFixed(1)}\n`;
+     |                                                                  ^^^^^^^^^^^^^ Cannot call impure function
+  55 |         }
+  56 |
+  57 |         const csvContent = "data:text/csv;charset=utf-8," + encodeURIComponent(  react-hooks/purity
+
+Γ£û 15 problems (13 errors, 2 warnings)
+

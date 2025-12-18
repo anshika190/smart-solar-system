@@ -1,0 +1,89 @@
+:root {
+  /* Solar Cyber Palette */
+  --bg-dark: #020617;
+  /* Deep Void Black */
+  --bg-card: rgba(30, 41, 59, 0.7);
+  /* Glassmorphism Panel */
+  --bg-card-hover: rgba(51, 65, 85, 0.8);
+
+  --primary: #0ea5e9;
+  /* Neon Sky Blue */
+  --primary-glow: rgba(14, 165, 233, 0.5);
+
+  --secondary: #6366f1;
+  /* Electric Indigo */
+  --accent: #f59e0b;
+  /* Solar Gold */
+  --success: #10b981;
+  /* Emerald Signal */
+  --danger: #ef4444;
+  /* Red Alert */
+
+  --text-primary: #f8fafc;
+  /* Ice White */
+  --text-secondary: #94a3b8;
+  /* Muted Blue-Grey */
+
+  --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  line-height: 1.5;
+  font-weight: 400;
+  overflow-x: hidden;
+
+  /* Subtle Tech Grid Background */
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-primary);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.025em;
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}

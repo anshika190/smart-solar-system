@@ -1,0 +1,11 @@
+[36mvite v7.3.0 [32mbuilding client environment for production...[36m[39m
+transforming...
+[32mΓ£ô[39m 33 modules transformed.
+Γ£ù Build failed in 439ms
+error during build:
+Could not resolve "../auth/AuthContext" from "src/components/layout/ProtectedRoute.jsx"
+file: C:/Users/Anshika Garg/smart-solar-system/frontend/src/components/layout/ProtectedRoute.jsx
+    at getRollupError (file:///C:/Users/Anshika%20Garg/smart-solar-system/frontend/node_modules/rollup/dist/es/shared/parseAst.js:401:41)
+    at error (file:///C:/Users/Anshika%20Garg/smart-solar-system/frontend/node_modules/rollup/dist/es/shared/parseAst.js:397:42)
+    at ModuleLoader.handleInvalidResolvedId (file:///C:/Users/Anshika%20Garg/smart-solar-system/frontend/node_modules/rollup/dist/es/shared/node-entry.js:21633:24)
+    at file:///C:/Users/Anshika%20Garg/smart-solar-system/frontend/node_modules/rollup/dist/es/shared/node-entry.js:21593:26
