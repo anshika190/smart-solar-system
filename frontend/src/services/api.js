@@ -46,7 +46,7 @@ api.interceptors.response.use(
                             id: 'demo-user-001',
                             name: 'Solar Admin',
                             email: 'admin@solarai.com',
-                            role: 'admin'
+                            role: 'admin' // Ensure role is strictly 'admin'
                         },
                         message: 'Demo Login Successful'
                     },
@@ -70,6 +70,22 @@ api.interceptors.response.use(
                     status: 201
                 };
             }
+        }
+
+        // Mock Fallback for CSV Export (If Backend is Offline)
+        if (isConnectionError && originalRequest.url.includes('/activity/all')) {
+            console.warn("Backend unreachable. Returning Mock Activity Logs.");
+            return {
+                data: [
+                    { timestamp: new Date().toISOString(), userName: 'System Admin', action: 'LOGIN', details: { email: 'admin@solarai.com' } },
+                    { timestamp: new Date(Date.now() - 1800000).toISOString(), userName: 'System Admin', action: 'PAGE_VISIT', details: { page: 'Reports' } },
+                    { timestamp: new Date(Date.now() - 3600000).toISOString(), userName: 'System Admin', action: 'PAGE_VISIT', details: { page: 'Dashboard' } },
+                    { timestamp: new Date(Date.now() - 5400000).toISOString(), userName: 'System Admin', action: 'LOGOUT', details: { method: 'User Initiated' } },
+                    { timestamp: new Date(Date.now() - 7200000).toISOString(), userName: 'System Admin', action: 'LOGIN', details: { email: 'admin@solarai.com' } },
+                    { timestamp: new Date(Date.now() - 86400000).toISOString(), userName: 'Sensor Bot', action: 'SYSTEM_CHECK', details: { status: 'OK' } },
+                ],
+                status: 200
+            };
         }
 
         return Promise.reject(error);

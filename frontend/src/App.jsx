@@ -11,10 +11,7 @@ import Register from './pages/Register';
 import ProtectedRoute from './components/layout/ProtectedRoute';
 import './App.css';
 
-const RedirectToLogin = () => {
-  const token = localStorage.getItem('token');
-  return token ? <Navigate to="/monitor" replace /> : <Navigate to="/login" replace />;
-};
+
 
 function App() {
   return (
@@ -22,7 +19,8 @@ function App() {
       <Routes>
         <Route path="/" element={<MainLayout />}>
           {/* Default redirect logic */}
-          <Route index element={<RedirectToLogin />} />
+          {/* Public Landing Page */}
+          <Route index element={<LandingPage />} />
 
           <Route path="login" element={<div className="container-padding"><Login /></div>} />
           <Route path="register" element={<div className="container-padding"><Register /></div>} />

@@ -1,96 +1,123 @@
 import React from 'react';
-import { Shield, Zap, Server, Globe, Cpu, Award } from 'lucide-react';
+import { User, Code, Zap, Globe, Cpu, GraduationCap, ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
 
 const About = () => {
     return (
-        <div style={{ minHeight: '100vh', padding: '2rem', paddingTop: '6rem', maxWidth: '1200px', margin: '0 auto' }}>
-            {/* Hero Section */}
-            <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-                <h1 style={{
-                    fontSize: '4rem', fontWeight: '800',
-                    background: 'linear-gradient(to right, #60a5fa, #34d399)',
-                    WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
-                    marginBottom: '1.5rem', letterSpacing: '-0.05em'
-                }}>
-                    SolarGov Intelligence
-                </h1>
-                <p style={{ fontSize: '1.25rem', color: '#94a3b8', maxWidth: '700px', margin: '0 auto', lineHeight: '1.8' }}>
-                    The world's most advanced <strong>AI-driven renewable energy monitoring system</strong>.
-                    Designed to optimize national grid efficiency through real-time predictive analytics.
-                </p>
-            </div>
+        <div style={{ minHeight: '100vh', padding: '2rem', paddingTop: '6rem', maxWidth: '1200px', margin: '0 auto', fontFamily: '"Inter", sans-serif' }}>
 
-            {/* Glowing Stats Grid */}
+            {/* Hero Profile Section */}
             <div style={{
-                display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', marginBottom: '5rem'
+                display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center',
+                marginBottom: '5rem', position: 'relative'
             }}>
-                {[
-                    { icon: <Cpu size={32} color="#60a5fa" />, value: "99.9%", label: "System Uptime" },
-                    { icon: <Zap size={32} color="#fbbf24" />, value: "1.2 GW", label: "Managed Power" },
-                    { icon: <Globe size={32} color="#34d399" />, value: "15 Cities", label: "Active Deployments" },
-                ].map((stat, i) => (
-                    <div key={i} className="glass-card" style={{
-                        padding: '2.5rem', textAlign: 'center',
-                        border: '1px solid rgba(255,255,255,0.05)',
-                        position: 'relative', overflow: 'hidden'
-                    }}>
-                        <div style={{
-                            background: 'rgba(255,255,255,0.03)', borderRadius: '50%', width: '80px', height: '80px',
-                            display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem auto'
-                        }}>
-                            {stat.icon}
-                        </div>
-                        <h3 style={{ fontSize: '2.5rem', fontWeight: '800', color: '#fff', marginBottom: '0.5rem' }}>{stat.value}</h3>
-                        <p style={{ color: '#94a3b8', fontWeight: '500' }}>{stat.label}</p>
-                    </div>
-                ))}
+                <div style={{
+                    width: '120px', height: '120px', borderRadius: '50%', background: 'linear-gradient(135deg, #60a5fa 0%, #34d399 100%)',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem',
+                    boxShadow: '0 10px 30px -10px rgba(96, 165, 250, 0.5)'
+                }}>
+                    <User size={60} color="#fff" />
+                </div>
+                <h1 style={{
+                    fontSize: '3.5rem', fontWeight: '800', marginBottom: '0.5rem',
+                    background: 'linear-gradient(to right, #fff, #94a3b8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'
+                }}>
+                    Anshika Garg
+                </h1>
+                <p style={{ fontSize: '1.25rem', color: '#94a3b8', marginBottom: '1rem' }}>
+                    Aspiring Software Engineer & Full Stack Developer
+                </p>
+                <div style={{ display: 'flex', gap: '10px', color: '#cbd5e1', fontSize: '0.95rem', fontWeight: '500' }}>
+                    <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                        <GraduationCap size={18} color="#60a5fa" /> CGC - College of Engineering, Landran
+                    </span>
+                </div>
             </div>
 
-            {/* Mission & Tech Sections */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '3rem' }}>
+            {/* The Project Story */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '3rem', marginBottom: '4rem' }}>
 
-                {/* Mission Card */}
-                <div className="glass-card" style={{ padding: '3rem', borderLeft: '4px solid #60a5fa' }}>
+                {/* Core Problem & Impact */}
+                <div className="glass-card" style={{ padding: '2.5rem', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.05)', background: 'rgba(15, 23, 42, 0.4)' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
-                        <Shield size={28} color="#60a5fa" />
-                        <h2 style={{ fontSize: '1.8rem', fontWeight: 'bold', color: '#f1f5f9' }}>Our Mission</h2>
+                        <div style={{ padding: '12px', background: 'rgba(239, 68, 68, 0.1)', borderRadius: '12px' }}><Zap size={24} color="#f87171" /></div>
+                        <h2 style={{ fontSize: '1.8rem', fontWeight: '700', color: '#fff', margin: 0 }}>The Challenge</h2>
                     </div>
-                    <p style={{ color: '#cbd5e1', lineHeight: '1.8', fontSize: '1.1rem' }}>
-                        To accelerate the global transition to clean energy by making solar infrastructure
-                        <strong> smarter, self-healing, and highly efficient</strong>. We eliminate the guesswork from
-                        maintenance using autonomous cleaning triggers and AI load balancing.
+                    <p style={{ color: '#cbd5e1', lineHeight: '1.7', fontSize: '1.1rem' }}>
+                        Traditional solar energy systems are often inefficient due to dust accumulation and static positioning, causing up to <strong>40% energy loss</strong>. Furthermore, the rapid rise of EVs faces a critical infrastructure gap—drivers simply can't find reliable, green charging stations easily.
                     </p>
                 </div>
 
-                {/* Tech Stack Card */}
-                <div className="glass-card" style={{ padding: '3rem', borderLeft: '4px solid #f472b6' }}>
+                {/* The Solution & Contribution */}
+                <div className="glass-card" style={{ padding: '2.5rem', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.05)', background: 'rgba(15, 23, 42, 0.4)' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
-                        <Server size={28} color="#f472b6" />
-                        <h2 style={{ fontSize: '1.8rem', fontWeight: 'bold', color: '#f1f5f9' }}>Core Technology</h2>
+                        <div style={{ padding: '12px', background: 'rgba(52, 211, 153, 0.1)', borderRadius: '12px' }}><Cpu size={24} color="#34d399" /></div>
+                        <h2 style={{ fontSize: '1.8rem', fontWeight: '700', color: '#fff', margin: 0 }}>My Solution</h2>
                     </div>
-                    <ul style={{ color: '#cbd5e1', lineHeight: '2', fontSize: '1.1rem', paddingLeft: '0', listStyle: 'none' }}>
-                        {[
-                            "Open-Meteo Real-time Weather API integration",
-                            "Geolocation-based Solar Angle Calculation",
-                            "Deep Learning Dust Accumulation Models",
-                            "Node.js & Express High-Performance Backend"
-                        ].map((item, i) => (
-                            <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                                <span style={{ width: '6px', height: '6px', background: '#f472b6', borderRadius: '50%' }}></span>
-                                {item}
-                            </li>
-                        ))}
-                    </ul>
+                    <p style={{ color: '#cbd5e1', lineHeight: '1.7', fontSize: '1.1rem' }}>
+                        I architected and built the <strong>"SolarGov Intelligence"</strong> platform—a unified web system that uses AI logic to automate solar maintenance and integrates real-time EV charging discovery. My goal was to demonstrate how <strong>Web Technologies (MERN)</strong> can solve complex physical infrastructure problems.
+                    </p>
                 </div>
-
             </div>
 
-            {/* Footer Note */}
-            <div style={{ marginTop: '5rem', textAlign: 'center', color: '#64748b', fontSize: '0.9rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', marginBottom: '1rem' }}>
-                    <Award size={16} /> Certified Green Technology Provider
+            {/* Skills & Methodology Section */}
+            <div style={{ marginBottom: '5rem' }}>
+                <h2 style={{ fontSize: '2rem', fontWeight: '800', color: '#fff', textAlign: 'center', marginBottom: '3rem' }}>
+                    Technical Arsenal & Methodology
+                </h2>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
+                    {[
+                        { title: 'Full Stack Architecture', desc: 'Designed the complete flow from React frontend to Node.js backend.', icon: <Globe color="#60a5fa" /> },
+                        { title: 'Secure Authentication', desc: 'Implemented JWT-based security and Role-Based Access Control (RBAC) implementation.', icon: <Code color="#a78bfa" /> },
+                        { title: 'Data Visualization', desc: 'Built real-time dashboards to visualize complex energy data.', icon: <Zap color="#fbbf24" /> },
+                        { title: 'System Design', desc: 'Engineered a scalable schema for Users, Logs, and Energy metrics.', icon: <Cpu color="#f472b6" /> },
+                    ].map((skill, i) => (
+                        <div key={i} style={{
+                            background: 'rgba(30, 41, 59, 0.5)', padding: '2rem', borderRadius: '16px',
+                            border: '1px solid rgba(255,255,255,0.03)', transition: 'transform 0.2s'
+                        }}
+                            onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
+                            onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+                        >
+                            <div style={{ marginBottom: '1rem' }}>{skill.icon}</div>
+                            <h3 style={{ fontSize: '1.25rem', fontWeight: '600', color: '#e2e8f0', marginBottom: '0.5rem' }}>{skill.title}</h3>
+                            <p style={{ color: '#94a3b8', fontSize: '0.95rem', lineHeight: '1.6' }}>{skill.desc}</p>
+                        </div>
+                    ))}
                 </div>
-                SolarGov Intelligence Suite v2.5.0 • Enterprise Edition
+            </div>
+
+            {/* Career Goals / Footer */}
+            <div style={{
+                background: 'linear-gradient(to right, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1))',
+                borderRadius: '24px', padding: '4rem', textAlign: 'center', border: '1px solid rgba(255,255,255,0.05)'
+            }}>
+                <h2 style={{ fontSize: '2rem', fontWeight: '800', color: '#fff', marginBottom: '1rem' }}>Ready to Build the Future</h2>
+                <p style={{ fontSize: '1.2rem', color: '#cbd5e1', maxWidth: '700px', margin: '0 auto 2rem auto', lineHeight: '1.6' }}>
+                    This research project represents my passion for combining <strong style={{ color: '#fff' }}>Clean Code</strong> with <strong style={{ color: '#fff' }}>Clean Energy</strong>.
+                    I am actively seeking opportunities to apply my Full Stack development skills to build impactful, scalable software solutions.
+                </p>
+                <div style={{ display: 'inline-flex', gap: '1rem' }}>
+                    {[
+                        { label: 'View Research Code', icon: <Github size={18} /> },
+                        { label: 'Connect on LinkedIn', icon: <Linkedin size={18} /> }
+                    ].map((btn, i) => (
+                        <button key={i} style={{
+                            display: 'flex', alignItems: 'center', gap: '10px', padding: '12px 24px',
+                            borderRadius: '50px', border: '1px solid rgba(255,255,255,0.1)',
+                            background: 'rgba(255,255,255,0.05)', color: '#fff', fontWeight: '600', cursor: 'pointer',
+                            transition: 'background 0.2s'
+                        }}
+                            onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'}
+                            onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.05)'}
+                        >
+                            {btn.icon} {btn.label}
+                        </button>
+                    ))}
+                </div>
+            </div>
+
+            <div style={{ marginTop: '3rem', textAlign: 'center', color: '#64748b', fontSize: '0.9rem' }}>
+                &copy; 2025 Anshika Garg • Developed for Academic Research at CGC Landran
             </div>
         </div>
     );

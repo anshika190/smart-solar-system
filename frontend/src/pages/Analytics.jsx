@@ -10,20 +10,8 @@ const Analytics = () => {
     const [loading, setLoading] = useState(true);
     const [location, setLocation] = useState({ city: 'Scanning...', lat: null, lon: null });
     const [weather, setWeather] = useState({ temp: 0, wind: 0, condition: 'Sunny', code: 0 });
-    const [logs, setLogs] = useState([]);
-
     // eslint-disable-next-line no-unused-vars
     const [error, setError] = useState(null);
-    const { user } = useContext(AuthContext);
-
-    useEffect(() => {
-        // Fetch logs only if admin
-        if (user && user.role === 'admin') {
-            api.get('/activity/all')
-                .then(res => setLogs(res.data))
-                .catch(err => console.error("Failed to fetch logs", err));
-        }
-    }, [user]);
 
     // Weather Scenarios for Graphs (Data Models)
     const weatherScenarios = {
@@ -312,63 +300,7 @@ const Analytics = () => {
                 </div>
             </div>
 
-            {/* 6. User Activity Logs - ADMIN ONLY */}
-            {user && user.role === 'admin' && (
-                <div className="glass-card" style={{ padding: '2rem', marginTop: '2rem' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1.5rem' }}>
-                        <List size={24} color="#fff" />
-                        <div>
-                            <h3 style={{ fontSize: '1.2rem', margin: 0 }}>System Access Logs</h3>
-                            <div style={{ fontSize: '0.85rem', color: '#94a3b8' }}>Real-time audit trail of user interactions (Admin Only)</div>
-                        </div>
-                    </div>
 
-                    <div style={{ maxHeight: '400px', overflowY: 'auto' }}>
-                        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.9rem' }}>
-                            <thead>
-                                <tr style={{ background: 'rgba(255,255,255,0.05)', textAlign: 'left' }}>
-                                    <th style={{ padding: '12px' }}>Timestamp</th>
-                                    <th style={{ padding: '12px' }}>User</th>
-                                    <th style={{ padding: '12px' }}>Action</th>
-                                    <th style={{ padding: '12px' }}>Details</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {logs.map((log) => (
-                                    <tr key={log._id} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                                        <td style={{ padding: '12px', color: '#94a3b8' }}>{new Date(log.timestamp).toLocaleString()}</td>
-                                        <td style={{ padding: '12px', fontWeight: 'bold' }}>{log.userName}</td>
-                                        <td style={{ padding: '12px' }}>
-                                            <span style={{
-                                                padding: '4px 8px', borderRadius: '4px', fontSize: '0.75rem',
-                                                background: log.action === 'LOGIN' ? 'rgba(16, 185, 129, 0.2)' :
-                                                    log.action === 'SIGNUP' ? 'rgba(59, 130, 246, 0.2)' :
-                                                        'rgba(255, 255, 255, 0.1)',
-                                                color: log.action === 'LOGIN' ? '#10b981' :
-                                                    log.action === 'SIGNUP' ? '#3b82f6' : '#fff'
-                                            }}>
-                                                {log.action}
-                                            </span>
-                                        </td>
-                                        <td style={{ padding: '12px', color: '#94a3b8' }}>
-                                            {log.details?.page ? `Visited ${log.details.page}` :
-                                                log.details?.email ? `Email: ${log.details.email}` :
-                                                    JSON.stringify(log.details)}
-                                        </td>
-                                    </tr>
-                                ))}
-                                {logs.length === 0 && (
-                                    <tr>
-                                        <td colSpan="4" style={{ padding: '20px', textAlign: 'center', color: '#64748b' }}>
-                                            No activity recorded yet
-                                        </td>
-                                    </tr>
-                                )}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            )}
         </div>
     );
 };
