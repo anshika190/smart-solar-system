@@ -26,7 +26,7 @@ const Register = () => {
             // Registration successful -> Auto Login
             login(response.data.user);
             localStorage.setItem('token', response.data.token);
-            navigate('/monitor');
+            navigate('/home');
 
         } catch (err) {
             console.error("Registration failed:", err);

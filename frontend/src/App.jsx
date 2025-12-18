@@ -13,6 +13,8 @@ import './App.css';
 
 
 
+import Home from './pages/Home';
+
 function App() {
   return (
     <BrowserRouter>
@@ -28,6 +30,7 @@ function App() {
 
           {/* Protected Routes */}
           <Route element={<ProtectedRoute />}>
+            <Route path="home" element={<div className="container-padding"><Home /></div>} />
             <Route path="monitor" element={<div className="container-padding"><LiveMonitoring /></div>} />
             <Route path="analytics" element={<div className="container-padding"><Analytics /></div>} />
             <Route path="reports" element={<div className="container-padding"><Reports /></div>} />
