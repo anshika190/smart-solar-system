@@ -13,7 +13,8 @@ const LandingPage = () => {
             <section className="hero-section">
                 <div className="hero-grid">
                     <div className="hero-content">
-                        <div className="badge" style={{ background: '#22c55e', color: 'white' }}>System Online v10.0 (READY)</div>
+                        <h1 style={{ color: 'lime', background: 'black', padding: '10px', fontSize: '40px' }}>DEPLOYMENT CONFIRMED V11.0</h1>
+                        <div className="badge" style={{ background: '#22c55e', color: 'white' }}>System Online v11.0 (FINAL)</div>
                         <h1>Smart Solar <br /><span className="text-gradient">Intelligence</span></h1>
                         <p className="hero-subtitle">
                             Empowering government infrastructures with real-time solar analytics,
