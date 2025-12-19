@@ -1,24 +1,45 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
+import React from 'react'
+import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
+import './index.css'
 import { AuthProvider } from './auth/AuthContext'
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <div style={{ border: '10px solid red', padding: '10px', background: 'black' }}>
-      <h1 style={{ color: 'red', textAlign: 'center' }}>V18.0 CONTROL CHECK</h1>
-      <a href="/final-demo" style={{ color: 'yellow', fontSize: '24px', display: 'block', textAlign: 'center', marginBottom: '20px' }}>CLICK HERE FOR DEMO</a>
-      <AuthProvider>
-        <App />
-      </AuthProvider>
-    </div>
-  </StrictMode>,
-) minHeight: '100vh', padding: '20px' }}>
-      <h1 style={{ color: 'red', fontSize: '50px', border: '5px solid red', padding: '20px' }}>
-        V18.0 CONTROL VERIFICATION
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <div style={{
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      width: '100vw',
+      height: '100vh',
+      background: 'black',
+      color: 'lime',
+      zIndex: 99999,
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: '20px'
+    }}>
+      <h1 style={{ fontSize: '40px', border: '5px solid lime', padding: '20px', marginBottom: '20px' }}>
+        V19.0: SYSTEM CONNECTED
       </h1>
-      <a href="/final-demo" style={{ color: 'white', fontSize: '24px', display: 'block', marginTop: '20px' }}>GO TO DEMO</a>
-      <App />
-  </React.StrictMode >,
+      <a href="/final-demo" style={{
+        color: 'black',
+        background: 'lime',
+        fontSize: '30px',
+        padding: '20px',
+        textDecoration: 'none',
+        borderRadius: '10px',
+        fontWeight: 'bold'
+      }}>
+        CLICK HERE FOR EV DEMO
+      </a>
+      <div style={{ marginTop: '50px', opacity: 0.5 }}>
+        <AuthProvider>
+          <App />
+        </AuthProvider>
+      </div>
+    </div>
+  </React.StrictMode>,
 )
