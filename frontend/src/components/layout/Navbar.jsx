@@ -48,7 +48,7 @@ const Navbar = () => {
                         </NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink to="/reports" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`} onClick={toggleMenu}>
+                        <NavLink to="/system-reports" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`} onClick={toggleMenu}>
                             Reports
                         </NavLink>
                     </li>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { User, Code, Zap, Globe, Cpu, GraduationCap, ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
+import EVNetworkAnimation from '../components/EVNetworkAnimation';
 
 const About = () => {
     return (
@@ -57,6 +58,9 @@ const About = () => {
                         I architected and built the <strong>"SolarGov Intelligence"</strong> platform—a unified web system that uses AI logic to automate solar maintenance and integrates real-time EV charging discovery. My goal was to demonstrate how <strong>Web Technologies (MERN)</strong> can solve complex physical infrastructure problems.
                     </p>
                 </div>
+
+                {/* EV Integration Visuals */}
+                <EVNetworkAnimation />
             </div>
 
             {/* Skills & Methodology Section */}

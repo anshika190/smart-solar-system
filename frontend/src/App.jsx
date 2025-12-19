@@ -35,8 +35,7 @@ function App() {
             <Route path="home" element={<div className="container-padding"><Home /></div>} />
             <Route path="monitor" element={<div className="container-padding"><LiveMonitoring /></div>} />
             <Route path="analytics" element={<div className="container-padding"><Analytics /></div>} />
-            <Route path="reports" element={<div className="container-padding"><SystemReports /></div>} />
-            <Route path="secret-logs-audit-view" element={<SecretLogs />} />
+            <Route path="system-reports" element={<div className="container-padding"><SystemReports /></div>} />
           </Route>
 
           {/* Catch all - redirect to login */}
