@@ -4,7 +4,7 @@ import { ShieldCheck, Zap, BarChart, ArrowRight, Layers, Globe, Cpu, Activity } 
 import './LandingPage.css';
 
 import SolarSystemAnimation from '../components/SolarSystemAnimation';
-import EVNetworkAnimation from '../components/EVNetworkAnimation';
+// import EVHub from '../components/EVHub';
 
 const LandingPage = () => {
     return (
@@ -13,7 +13,7 @@ const LandingPage = () => {
             <section className="hero-section">
                 <div className="hero-grid">
                     <div className="hero-content">
-                        <div className="badge" style={{ background: '#22c55e', color: 'white' }}>System Online v6.0 (FINAL CHECK)</div>
+                        <div className="badge" style={{ background: '#3b82f6', color: 'white' }}>System Online v7.0 (BLUE CHECK)</div>
                         <h1>Smart Solar <br /><span className="text-gradient">Intelligence</span></h1>
                         <p className="hero-subtitle">
                             Empowering government infrastructures with real-time solar analytics,
@@ -143,8 +143,8 @@ const LandingPage = () => {
                 </div>
             </section>
 
-            {/* Smart EV Animation Hub */}
-            <EVNetworkAnimation />
+            {/* Smart EV Animation Hub - TEMPORARILY REMOVED FOR RESET */}
+            {/* <EVHub /> */}
 
             {/* CTA Section */}
             <section className="cta-section">
