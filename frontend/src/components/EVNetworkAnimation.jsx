@@ -1,7 +1,7 @@
 import React from 'react';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
-import { Zap, MapPin, Smartphone, Navigation, BatteryCharging, CheckCircle, Search } from 'lucide-react';
+import { Zap, Smartphone, Navigation, BatteryCharging, CheckCircle, Search } from 'lucide-react';
 
 const EVNetworkAnimation = () => {
     return (

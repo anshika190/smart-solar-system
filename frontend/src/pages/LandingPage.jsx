@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { ShieldCheck, Zap, BarChart, ArrowRight, Sun, Layers, Globe, Cpu, Activity } from 'lucide-react';
+import { ShieldCheck, Zap, BarChart, ArrowRight, Layers, Globe, Cpu, Activity } from 'lucide-react';
 import './LandingPage.css';
 
 import SolarSystemAnimation from '../components/SolarSystemAnimation';

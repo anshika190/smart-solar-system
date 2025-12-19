@@ -1,6 +1,7 @@
+
 import React, { useState, useEffect } from 'react';
-import { LineChart, Line, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine } from 'recharts';
-import { Battery, CloudSnow, Wind, Sun, CloudRain, CloudFog, CloudLightning, MapPin, Loader, RefreshCw, AlertTriangle, Zap, BarChart2, List } from 'lucide-react';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { Sun, CloudFog, CloudLightning, MapPin, Loader, RefreshCw } from 'lucide-react';
 import '../App.css';
 import api from '../services/api';
 import { useContext } from 'react';

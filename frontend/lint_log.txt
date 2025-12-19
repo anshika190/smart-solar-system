@@ -1,0 +1,22 @@
+
+> frontend@0.0.0 lint
+> eslint .
+
+
+C:\Users\Anshika Garg\smart-solar-system\frontend\src\pages\About.jsx
+  3:10  error  Parsing error: Identifier 'User' has already been declared
+
+C:\Users\Anshika Garg\smart-solar-system\frontend\src\pages\Analytics.jsx
+    5:8   error    'api' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                         no-unused-vars
+    6:10  error    'useContext' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                  no-unused-vars
+  151:44  warning  React Hook useEffect has a missing dependency: 'handleLocateMe'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Users\Anshika Garg\smart-solar-system\frontend\src\pages\LiveMonitoring.jsx
+  156:8  warning  React Hook useEffect has missing dependencies: 'runControlAlgorithms' and 'runStationLogic'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Users\Anshika Garg\smart-solar-system\frontend\src\pages\SystemReports.jsx
+   6:8   error  'api' is defined but never used. Allowed unused vars must match /^[A-Z_]/u            no-unused-vars
+  11:13  error  'user' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+Γ£û 7 problems (5 errors, 2 warnings)
+

@@ -1,6 +1,5 @@
 import React from 'react';
-import { User, Code, Zap, Globe, Cpu, GraduationCap, ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
-import { User, Code, Zap, Globe, Cpu, GraduationCap, ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
+import { User, Code, Zap, Globe, Cpu, GraduationCap, Github, Linkedin } from 'lucide-react';
 
 const About = () => {
     return (

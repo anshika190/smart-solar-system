@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from 'react';
 /* eslint-disable react-hooks/purity */
 import { Download, FileText, CheckCircle, Clock, Calendar, Search } from 'lucide-react';
-import { useContext } from 'react';
-import { AuthContext } from '../auth/AuthContext';
-import api from '../services/api';
 
 const SystemReports = () => {
     const [reports, setReports] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
-    const { user } = useContext(AuthContext);
 
     useEffect(() => {
         // Generate last 30 days of reports
