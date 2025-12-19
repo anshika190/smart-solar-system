@@ -22,7 +22,7 @@ const SmartEVSystem = () => {
     };
 
     return (
-        <div style={{ padding: '6rem 0', background: 'radial-gradient(circle at 50% 50%, #0f172a 0%, #020617 80%)', position: 'relative', overflow: 'hidden', borderRadius: '24px', margin: '4rem 0' }}>
+        <div style={{ padding: '6rem 0', background: 'radial-gradient(circle at 50% 50%, #0f172a 0%, #020617 80%)', position: 'relative', overflow: 'hidden', borderRadius: '24px', margin: '4rem 0', minHeight: '600px', display: 'block', width: '100%' }}>
 
             {/* Dynamic Atmosphere */}
             <div style={{ position: 'absolute', inset: 0, opacity: 0.1, pointerEvents: 'none' }}>
