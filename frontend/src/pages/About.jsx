@@ -1,6 +1,6 @@
 import React from 'react';
 import { User, Code, Zap, Globe, Cpu, GraduationCap, ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
-import EVNetworkAnimation from '../components/EVNetworkAnimation';
+import { User, Code, Zap, Globe, Cpu, GraduationCap, ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
 
 const About = () => {
     return (
@@ -59,8 +59,6 @@ const About = () => {
                     </p>
                 </div>
 
-                {/* EV Integration Visuals */}
-                <EVNetworkAnimation />
             </div>
 
             {/* Skills & Methodology Section */}
