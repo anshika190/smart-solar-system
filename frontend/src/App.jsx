@@ -17,10 +17,13 @@ import Home from './pages/Home';
 
 import SecretLogs from './pages/SecretLogs';
 
+import EVDemoPage from './pages/EVDemoPage';
+
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/final-demo" element={<EVDemoPage />} />
         <Route path="/" element={<MainLayout />}>
           {/* Default redirect logic */}
           {/* Public Landing Page */}
