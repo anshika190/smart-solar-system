@@ -24,8 +24,8 @@ const LandingPage = () => {
                             <NavLink to="/monitor" className="btn btn-primary">
                                 Access Dashboard <ArrowRight size={18} style={{ marginLeft: '8px' }} />
                             </NavLink>
-                            <NavLink to="/about" className="btn btn-secondary">
-                                View Documentation
+                            <NavLink to="/final-demo" className="btn" style={{ background: '#f59e0b', color: 'black', fontWeight: 'bold' }}>
+                                ⚡ OPEN EV DEMO
                             </NavLink>
                         </div>
                         <div className="hero-stats-mini">
