@@ -64,22 +64,20 @@
 
 /* Centered Layout for Hero */
 
-/* Centered Hero Layout */
+
+/* Standard Hero Layout */
 .hero-content {
-    padding-left: 0;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 800px;
-    /* Constrain text width for readability */
-    margin: 0 auto 4rem auto;
+    padding-left: 2rem;
+    text-align: left;
+    display: block;
 }
 
 .hero-grid {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    /* Expanded right side image area */
+    gap: 4rem;
+    align-items: center;
 }
 
 .text-gradient {
@@ -92,14 +90,15 @@
 
 /* ... existing styles ... */
 
+/* Hero Visuals */
 .hero-visual {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    transform: none;
-    /* Reset toggle */
+    /* Shifting picture from left (moving right) by ~5cm */
+    transform: translateX(12rem);
     padding: 0 1rem;
     /* Slight padding or 0 if full bleed desired */
 }
