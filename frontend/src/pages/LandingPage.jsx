@@ -4,7 +4,7 @@ import { ShieldCheck, Zap, BarChart, ArrowRight, Layers, Globe, Cpu, Activity } 
 import './LandingPage.css';
 
 import SolarSystemAnimation from '../components/SolarSystemAnimation';
-import SmartEVSystem from '../components/SmartEVSystem';
+
 
 const LandingPage = () => {
     return (
@@ -143,8 +143,7 @@ const LandingPage = () => {
                 </div>
             </section>
 
-            {/* Smart EV Animation Hub */}
-            <SmartEVSystem />
+
 
             {/* CTA Section */}
             <section className="cta-section">
