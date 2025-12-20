@@ -13,8 +13,8 @@ const LandingPage = () => {
             <section className="hero-section">
                 <div className="hero-grid">
                     <div className="hero-content">
-                        <div className="badge" style={{ background: '#22c55e', color: 'white' }}>System Online v12.0 (LIVE)</div>
-                        <h1>Smart Solar <br /><span className="text-gradient">Intelligence</span></h1>
+                        <div className="badge">NEXT GENERATION ENERGY GRID</div>
+                        <h1>Smart Solar <br /><span style={{ color: '#3b82f6' }}>Intelligence</span></h1>
                         <p className="hero-subtitle">
                             Empowering government infrastructures with real-time solar analytics,
                             AI-driven efficiency, and seamless grid integration.
@@ -23,9 +23,9 @@ const LandingPage = () => {
                             <NavLink to="/monitor" className="btn btn-primary">
                                 Access Dashboard <ArrowRight size={18} style={{ marginLeft: '8px' }} />
                             </NavLink>
-                            <NavLink to="/final-demo" className="btn" style={{ background: '#f59e0b', color: 'black', fontWeight: 'bold' }}>
-                                ⚡ OPEN EV DEMO
-                            </NavLink>
+                            <a href="#" className="btn btn-secondary">
+                                View Documentation
+                            </a>
                         </div>
                         <div className="hero-stats-mini">
                             <div className="mini-stat">
