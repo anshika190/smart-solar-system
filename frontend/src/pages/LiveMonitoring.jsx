@@ -171,52 +171,6 @@ const LiveMonitoring = () => {
                 </div>
             </div>
 
-            {/* EV SYSTEM INTEGRATION - INLINED FOR STABILITY */}
-            <div style={{ marginBottom: '60px', border: '1px solid #334155', borderRadius: '20px', padding: '0', overflow: 'hidden', background: '#0f172a' }}>
-                <div style={{ padding: '20px', background: '#1e293b', borderBottom: '1px solid #334155', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <h2 style={{ margin: 0, color: '#22c55e', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                        <Zap size={24} fill="#22c55e" /> SMART EV INFRASTRUCTURE
-                    </h2>
-                    <span style={{ background: '#22c55e', color: 'black', padding: '4px 12px', borderRadius: '4px', fontWeight: 'bold' }}>LIVE V26.0</span>
-                </div>
-
-                <div style={{ padding: '40px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '30px', background: 'radial-gradient(circle at 50% 50%, #1e293b 0%, #020617 100%)' }}>
-                    {/* 1. Status Display */}
-                    <div style={{ display: 'flex', gap: '40px', flexWrap: 'wrap', justifyContent: 'center', width: '100%' }}>
-                        <div style={{ background: 'rgba(255,255,255,0.05)', padding: '20px', borderRadius: '12px', minWidth: '200px', textAlign: 'center', border: '1px solid #3b82f6' }}>
-                            <div style={{ color: '#94a3b8', marginBottom: '5px' }}>User App Status</div>
-                            <div style={{ fontSize: '24px', fontWeight: 'bold', color: '#3b82f6' }}>Route Found</div>
-                        </div>
-                        <div style={{ background: 'rgba(255,255,255,0.05)', padding: '20px', borderRadius: '12px', minWidth: '200px', textAlign: 'center', border: '1px solid #22c55e' }}>
-                            <div style={{ color: '#94a3b8', marginBottom: '5px' }}>Charging Status</div>
-                            <div style={{ fontSize: '24px', fontWeight: 'bold', color: '#22c55e' }}>85% Charged</div>
-                        </div>
-                    </div>
-
-                    {/* 2. Interactive Search Button */}
-                    <div style={{ position: 'relative', padding: '40px' }}>
-                        <div style={{
-                            width: '200px', height: '200px', borderRadius: '50%', border: '4px solid #22c55e',
-                            display: 'flex', alignItems: 'center', justifyContent: 'center',
-                            boxShadow: '0 0 50px rgba(34, 197, 94, 0.3)', cursor: 'pointer',
-                            background: '#020617'
-                        }}
-                            onClick={() => window.open('https://www.google.com/maps/search/EV+charging+stations+near+me', '_blank')}
-                        >
-                            <div style={{ textAlign: 'center' }}>
-                                <MapPin size={48} color="#22c55e" style={{ marginBottom: '10px' }} />
-                                <div style={{ color: 'white', fontWeight: 'bold' }}>FIND STATIONS</div>
-                                <div style={{ color: '#22c55e', fontSize: '12px', marginTop: '5px' }}>(Click Demo)</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div style={{ color: '#94a3b8', fontSize: '14px' }}>
-                        * This system automatically optimizes charging routes based on solar availability.
-                    </div>
-                </div>
-            </div>
-
             {/* Visual Logic Grid */}
             <div className="logic-grid">
 
@@ -292,6 +246,52 @@ const LiveMonitoring = () => {
                         <div className="gauge-value">{logicState.p_per_ev} kW</div>
                         <div className="gauge-label">Per Station</div>
                         <div className="connected-tag">{systemState.evCount} Systems Connected</div>
+                    </div>
+                </div>
+            </div>
+
+            {/* EV SYSTEM INTEGRATION - INLINED FOR STABILITY */}
+            <div style={{ marginBottom: '60px', border: '1px solid #334155', borderRadius: '20px', padding: '0', overflow: 'hidden', background: '#0f172a' }}>
+                <div style={{ padding: '20px', background: '#1e293b', borderBottom: '1px solid #334155', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <h2 style={{ margin: 0, color: '#22c55e', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                        <Zap size={24} fill="#22c55e" /> SMART EV INFRASTRUCTURE
+                    </h2>
+                    <span style={{ background: '#22c55e', color: 'black', padding: '4px 12px', borderRadius: '4px', fontWeight: 'bold' }}>LIVE V26.0</span>
+                </div>
+
+                <div style={{ padding: '40px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '30px', background: 'radial-gradient(circle at 50% 50%, #1e293b 0%, #020617 100%)' }}>
+                    {/* 1. Status Display */}
+                    <div style={{ display: 'flex', gap: '40px', flexWrap: 'wrap', justifyContent: 'center', width: '100%' }}>
+                        <div style={{ background: 'rgba(255,255,255,0.05)', padding: '20px', borderRadius: '12px', minWidth: '200px', textAlign: 'center', border: '1px solid #3b82f6' }}>
+                            <div style={{ color: '#94a3b8', marginBottom: '5px' }}>User App Status</div>
+                            <div style={{ fontSize: '24px', fontWeight: 'bold', color: '#3b82f6' }}>Route Found</div>
+                        </div>
+                        <div style={{ background: 'rgba(255,255,255,0.05)', padding: '20px', borderRadius: '12px', minWidth: '200px', textAlign: 'center', border: '1px solid #22c55e' }}>
+                            <div style={{ color: '#94a3b8', marginBottom: '5px' }}>Charging Status</div>
+                            <div style={{ fontSize: '24px', fontWeight: 'bold', color: '#22c55e' }}>85% Charged</div>
+                        </div>
+                    </div>
+
+                    {/* 2. Interactive Search Button */}
+                    <div style={{ position: 'relative', padding: '40px' }}>
+                        <div style={{
+                            width: '200px', height: '200px', borderRadius: '50%', border: '4px solid #22c55e',
+                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                            boxShadow: '0 0 50px rgba(34, 197, 94, 0.3)', cursor: 'pointer',
+                            background: '#020617'
+                        }}
+                            onClick={() => window.open('https://www.google.com/maps/search/EV+charging+stations+near+me', '_blank')}
+                        >
+                            <div style={{ textAlign: 'center' }}>
+                                <MapPin size={48} color="#22c55e" style={{ marginBottom: '10px' }} />
+                                <div style={{ color: 'white', fontWeight: 'bold' }}>FIND STATIONS</div>
+                                <div style={{ color: '#22c55e', fontSize: '12px', marginTop: '5px' }}>(Click Demo)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style={{ color: '#94a3b8', fontSize: '14px' }}>
+                        * This system automatically optimizes charging routes based on solar availability.
                     </div>
                 </div>
             </div>
