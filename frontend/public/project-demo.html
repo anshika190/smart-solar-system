@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart EV System - LIVE DEMO</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #020617;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            color: #22c55e;
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+        }
+
+        .container {
+            position: relative;
+            width: 1000px;
+            height: 500px;
+            background: radial-gradient(circle at 50% 50%, #1e293b 0%, #020617 70%);
+            border-radius: 24px;
+            border: 1px solid #334155;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 80px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .node {
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 20px;
+            width: 220px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: default;
+            transition: all 0.3s ease;
+        }
+
+        .node.interactive {
+            cursor: pointer;
+            border-color: #f472b6;
+        }
+
+        .node.interactive:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(244, 114, 182, 0.4);
+        }
+
+        .hub {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            border: 2px solid #22c55e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 0 50px rgba(34, 197, 94, 0.2);
+        }
+
+        .hub svg {
+            width: 60px;
+            height: 60px;
+            fill: #22c55e;
+        }
+
+        .orbit {
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            border: 1px dashed rgba(34, 197, 94, 0.3);
+            border-radius: 50%;
+            animation: spin 10s linear infinite;
+        }
+
+        .orbit-dot {
+            position: absolute;
+            top: -6px;
+            left: 50%;
+            width: 12px;
+            height: 12px;
+            background: #22c55e;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #22c55e;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .status-badge {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(34, 197, 94, 0.1);
+            color: #22c55e;
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            font-weight: bold;
+        }
+
+        /* Connecting Lines */
+        .line-left,
+        .line-right {
+            position: absolute;
+            height: 2px;
+            top: 50%;
+            background: #334155;
+            z-index: 1;
+        }
+
+        .line-left {
+            left: 280px;
+            width: 150px;
+        }
+
+        .line-right {
+            right: 280px;
+            width: 150px;
+        }
+
+        .active-beam {
+            position: absolute;
+            height: 4px;
+            background: #22c55e;
+            top: 50%;
+            margin-top: -2px;
+            width: 0;
+            z-index: 2;
+            box-shadow: 0 0 10px #22c55e;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Smart EV Infrastructure</h1>
+        <p style="color: #94a3b8; font-size: 1.2rem;">Independent Live Demo & Verification System</p>
+    </div>
+
+    <div class="container">
+        <!-- Left Side -->
+        <div style="display: flex; flexDirection: column; gap: 30px; z-index: 10;">
+            <div class="node" id="user-app">
+                <div style="font-size: 24px;">📱</div>
+                <div>
+                    <div style="color: #94a3b8; font-size: 0.9rem;">User App</div>
+                    <div id="app-status" style="font-weight: bold; font-size: 1.1rem;">Locating...</div>
+                </div>
+            </div>
+
+            <div class="node interactive" onclick="startSearch()">
+                <div style="font-size: 24px;">🔍</div>
+                <div>
+                    <div style="color: #f472b6; font-size: 0.9rem;">Google Maps</div>
+                    <div id="maps-status" style="font-weight: bold; font-size: 1.1rem;">Click to Search</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Center Hub -->
+        <div class="hub">
+            <svg viewBox="0 0 24 24">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+            </svg>
+            <div class="orbit">
+                <div class="orbit-dot"></div>
+            </div>
+        </div>
+
+        <!-- Beams -->
+        <div class="line-left"></div>
+        <div class="active-beam" id="beam-left" style="left: 280px;"></div>
+
+        <div class="line-right"></div>
+        <div class="active-beam" id="beam-right" style="left: 500px;"></div>
+
+        <!-- Right Side -->
+        <div style="display: flex; flexDirection: column; gap: 30px; z-index: 10;">
+            <div class="node">
+                <div style="font-size: 24px;">🔋</div>
+                <div>
+                    <div style="color: #94a3b8; font-size: 0.9rem;">Charging</div>
+                    <div style="font-weight: bold; font-size: 1.1rem;">85%</div>
+                </div>
+            </div>
+            <div class="node">
+                <div style="font-size: 24px;">✅</div>
+                <div>
+                    <div style="color: #94a3b8; font-size: 0.9rem;">Est. Range</div>
+                    <div style="font-weight: bold; font-size: 1.1rem;">320 km</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="status-badge" id="hub-status">System Standby</div>
+    </div>
+
+    <script>
+        function startSearch() {
+            const mapsNode = document.querySelector('.node.interactive');
+            const mapsStatus = document.getElementById('maps-status');
+            const appStatus = document.getElementById('app-status');
+            const beamLeft = document.getElementById('beam-left');
+            const hubStatus = document.getElementById('hub-status');
+
+            if (mapsStatus.innerText === 'Scanning...') return;
+
+            // 1. Start Search UI
+            mapsStatus.innerText = 'Scanning...';
+            mapsStatus.style.color = '#fbbf24';
+            hubStatus.innerText = 'Optimizing Route...';
+
+            // 2. Animate Beam
+            beamLeft.style.transition = 'width 1s ease-in-out';
+            beamLeft.style.width = '150px';
+
+            setTimeout(() => {
+                // 3. Success State
+                appStatus.innerText = 'Route Found!';
+                appStatus.style.color = '#22c55e';
+                hubStatus.innerText = 'Route Optimized';
+
+                // 4. Open Google Maps
+                window.open('https://www.google.com/maps/search/EV+charging+stations+near+me', '_blank');
+
+                // 5. Reset after 5s
+                setTimeout(() => {
+                    mapsStatus.innerText = 'Click to Search';
+                    mapsStatus.style.color = 'white';
+                    appStatus.innerText = 'Locating...';
+                    appStatus.style.color = 'white';
+                    beamLeft.style.width = '0';
+                    hubStatus.innerText = 'System Standby';
+                }, 5000);
+
+            }, 1000);
+        }
+    </script>
+</body>
+
+</html>
