@@ -63,21 +63,19 @@
 
 
 /* Centered Layout for Hero */
+/* Standard Hero Layout */
 .hero-content {
-    /* Removed specific padding/alignment */
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 4rem;
-    /* Space between text and image */
+    padding-left: 2rem;
+    text-align: left;
+    display: block;
 }
 
 .hero-grid {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    /* Expanded right side image area as requested previously */
+    gap: 4rem;
     align-items: center;
-    text-align: center;
 }
 
 .badge {
@@ -165,8 +163,6 @@
 .hero-stats-mini {
     display: flex;
     align-items: center;
-    justify-content: center;
-    /* Centered stats */
     gap: 2rem;
     padding-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
