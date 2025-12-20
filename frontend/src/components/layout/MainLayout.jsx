@@ -24,8 +24,25 @@ const MainLayout = () => {
 
     return (
         <div className="layout-container">
+            <div style={{
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                width: '100%',
+                background: 'red',
+                color: 'yellow',
+                zIndex: 99999,
+                textAlign: 'center',
+                padding: '10px',
+                fontWeight: 'bold',
+                fontSize: '20px',
+                borderBottom: '5px solid yellow'
+            }}>
+                DEBUG: V25.0 LIVE - UPDATE SUCCESSFUL
+                <a href="/final-demo" style={{ marginLeft: '20px', color: 'white', textDecoration: 'underline' }}>OPEN DEMO DIRECTLY</a>
+            </div>
             <Navbar />
-            <main className="main-content-area">
+            <main className="main-content-area" style={{ marginTop: '50px' }}>
                 <Outlet />
             </main>
             <footer className="site-footer">
