@@ -15,7 +15,44 @@
     padding: 0 2rem;
 }
 
-/* ... animations ... */
+/* Animations */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes pulse-neon {
+    0% {
+        box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(14, 165, 233, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(14, 165, 233, 0);
+    }
+}
+
+@keyframes glow-text {
+
+    0%,
+    100% {
+        text-shadow: 0 0 10px rgba(14, 165, 233, 0.5);
+    }
+
+    50% {
+        text-shadow: 0 0 20px rgba(14, 165, 233, 0.8), 0 0 30px rgba(99, 102, 241, 0.6);
+    }
+}
 
 /* Hero Section */
 .hero-section {
@@ -24,18 +61,23 @@
     background: radial-gradient(circle at 70% 30%, rgba(14, 165, 233, 0.15) 0%, transparent 60%);
 }
 
+
+/* Centered Layout for Hero */
 .hero-content {
-    padding-left: 2rem;
-    text-align: left;
-    display: block;
+    /* Removed specific padding/alignment */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 4rem;
+    /* Space between text and image */
 }
 
 .hero-grid {
-    display: grid;
-    grid-template-columns: 0.8fr 1.2fr;
-    /* Give more space to the image on the right */
-    gap: 4rem;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
 .badge {
