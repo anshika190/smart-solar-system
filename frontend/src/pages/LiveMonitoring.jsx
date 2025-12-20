@@ -250,8 +250,36 @@ const LiveMonitoring = () => {
                 </div>
             </div>
 
+            {/* Smart Features Row */}
+            <div className="features-row">
+                <div className="feature-tile">
+                    <div className="f-icon"><RotateCw size={20} /></div>
+                    <div className="f-content">
+                        <span className="label">Panel Angle</span>
+                        <span className="value">{logicState.panelAngle}°</span>
+                        <span className="sub">{logicState.panelAngle === 10 ? 'Parked' : 'Optimized'}</span>
+                    </div>
+                </div>
+                <div className={`feature-tile ${logicState.cleaningSystem === 'ACTIVE' ? 'alert-tile' : ''}`}>
+                    <div className="f-icon"><Wind size={20} /></div>
+                    <div className="f-content">
+                        <span className="label">Cleaning Sys</span>
+                        <span className="value">{logicState.cleaningSystem}</span>
+                        <span className="sub">Dust: {Math.round(systemState.dust)}%</span>
+                    </div>
+                </div>
+                <div className="feature-tile">
+                    <div className="f-icon"><MapPin size={20} /></div>
+                    <div className="f-content">
+                        <span className="label">Nearby Stations</span>
+                        <span className="value">{logicState.stations.filter(s => s.visible).length}</span>
+                        <span className="sub">Within 5km</span>
+                    </div>
+                </div>
+            </div>
+
             {/* EV SYSTEM INTEGRATION - INLINED FOR STABILITY */}
-            <div style={{ marginBottom: '60px', border: '1px solid #334155', borderRadius: '20px', padding: '0', overflow: 'hidden', background: '#0f172a' }}>
+            <div style={{ marginBottom: '60px', marginTop: '40px', border: '1px solid #334155', borderRadius: '20px', padding: '0', overflow: 'hidden', background: '#0f172a' }}>
                 <div style={{ padding: '20px', background: '#1e293b', borderBottom: '1px solid #334155', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <h2 style={{ margin: 0, color: '#22c55e', display: 'flex', alignItems: 'center', gap: '10px' }}>
                         <Zap size={24} fill="#22c55e" /> SMART EV INFRASTRUCTURE
@@ -292,34 +320,6 @@ const LiveMonitoring = () => {
 
                     <div style={{ color: '#94a3b8', fontSize: '14px' }}>
                         * This system automatically optimizes charging routes based on solar availability.
-                    </div>
-                </div>
-            </div>
-
-            {/* Smart Features Row */}
-            <div className="features-row">
-                <div className="feature-tile">
-                    <div className="f-icon"><RotateCw size={20} /></div>
-                    <div className="f-content">
-                        <span className="label">Panel Angle</span>
-                        <span className="value">{logicState.panelAngle}°</span>
-                        <span className="sub">{logicState.panelAngle === 10 ? 'Parked' : 'Optimized'}</span>
-                    </div>
-                </div>
-                <div className={`feature-tile ${logicState.cleaningSystem === 'ACTIVE' ? 'alert-tile' : ''}`}>
-                    <div className="f-icon"><Wind size={20} /></div>
-                    <div className="f-content">
-                        <span className="label">Cleaning Sys</span>
-                        <span className="value">{logicState.cleaningSystem}</span>
-                        <span className="sub">Dust: {Math.round(systemState.dust)}%</span>
-                    </div>
-                </div>
-                <div className="feature-tile">
-                    <div className="f-icon"><MapPin size={20} /></div>
-                    <div className="f-content">
-                        <span className="label">Nearby Stations</span>
-                        <span className="value">{logicState.stations.filter(s => s.visible).length}</span>
-                        <span className="sub">Within 5km</span>
                     </div>
                 </div>
             </div>
