@@ -65,18 +65,12 @@
 /* Centered Layout for Hero */
 
 
-/* Standard Hero Layout */
-.hero-content {
-    padding-left: 2.5rem;
-    text-align: left;
-    display: block;
-}
-
-.hero-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
+.hero-content h1 {
+    font-size: 5.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
 }
 
 .text-gradient {
@@ -85,6 +79,14 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: glow-text 3s infinite;
+}
+
+.hero-content h1 {
+    font-size: 5.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -2px;
 }
 
 .hero-subtitle {
