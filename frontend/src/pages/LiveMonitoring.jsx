@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Sun, Wind, Thermometer, Battery, Zap, Activity, RotateCw, CloudRain, CheckCircle, AlertTriangle, MapPin, Navigation, ArrowRight } from 'lucide-react';
+import SmartEVSystem from '../components/SmartEVSystem';
 import './LiveMonitoring.css';
 
 const LiveMonitoring = () => {
@@ -168,6 +169,12 @@ const LiveMonitoring = () => {
                     <div className="pulse-dot"></div>
                     OPERATIONAL
                 </div>
+            </div>
+
+            {/* EV SYSTEM INTEGRATION */}
+            <div style={{ marginBottom: '60px', border: '1px solid #334155', borderRadius: '20px', padding: '20px', background: 'rgba(15, 23, 42, 0.5)' }}>
+                <h2 style={{ textAlign: 'center', marginBottom: '20px', color: '#22c55e' }}>⚡ LIVE EV SYSTEM (INTEGRATED)</h2>
+                <SmartEVSystem />
             </div>
 
             {/* Visual Logic Grid */}
