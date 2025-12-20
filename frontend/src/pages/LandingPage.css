@@ -65,12 +65,18 @@
 /* Centered Layout for Hero */
 
 
-.hero-content h1 {
-    font-size: 5.5rem;
-    font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-    letter-spacing: -1px;
+/* Standard Hero Layout */
+.hero-content {
+    padding-left: 2.5rem;
+    text-align: left;
+    display: block;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
 }
 
 .text-gradient {
@@ -82,7 +88,7 @@
 }
 
 .hero-content h1 {
-    font-size: 5.5rem;
+    font-size: 4.5rem;
     font-weight: 800;
     line-height: 1.1;
     margin-bottom: 1.5rem;
