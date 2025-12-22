@@ -1,0 +1,17 @@
+
+IMPORTANT: Access Links for Smart Solar System
+==============================================
+
+These are the permanent local access links for your finalized project.
+Ensure the development server is running (npm run dev) to access them.
+
+1. MAIN PROJECT WEBSITE (Live Monitoring & Smart EV Integration)
+   URL: http://localhost:5173/monitor
+   - Contains: Dashboard, Real-time Charts, V27.0 Badge, EV Charging Integration.
+
+2. ADMIN AUDIT & CLIENT LOGS (Secret Admin Panel)
+   URL: http://localhost:5173/secret-logs
+   - Contains: Secure Audit Logs, 'Generate Master Log File' button (CSV Export).
+   - Use this to download the Excel sheet of client visit history.
+
+Note: Since the code is saved in your Git repository, these routes are now a permanent part of your application source code.
