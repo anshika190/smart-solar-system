@@ -10,6 +10,7 @@ const logActivity = async (user, action, details = {}, ipAddress = null) => {
         const activity = new UserActivity({
             userId: user._id,
             userName: user.name,
+            userEmail: user.email,
             action,
             details,
             ipAddress

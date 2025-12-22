@@ -75,10 +75,10 @@ api.interceptors.response.use(
         // Mock Fallback for CSV Export (If Backend is Offline)
         if (isConnectionError && originalRequest.url.includes('/activity/export')) {
             console.warn("Backend unreachable. Returning Mock Export CSV.");
-            const mockCSV = "Timestamp (IST),User Name,Action,Details,IP Address\n" +
-                new Date().toLocaleString() + ",System Admin,LOGIN,Method: Standard,127.0.0.1\n" +
-                new Date(Date.now() - 3600000).toLocaleString() + ",System Admin,PAGE_VISIT,Page: Dashboard,127.0.0.1\n" +
-                new Date(Date.now() - 7200000).toLocaleString() + ",System Admin,EXPORT,Failed Retry,127.0.0.1";
+            const mockCSV = "Date,Time,User Email,Action,Details,IP Address\n" +
+                new Date().toLocaleDateString() + "," + new Date().toLocaleTimeString() + ",admin@solarai.com,LOGIN,Method: Standard,127.0.0.1\n" +
+                new Date(Date.now() - 3600000).toLocaleDateString() + "," + new Date(Date.now() - 3600000).toLocaleTimeString() + ",admin@solarai.com,PAGE_VISIT,Page: Dashboard,127.0.0.1\n" +
+                new Date(Date.now() - 7200000).toLocaleDateString() + "," + new Date(Date.now() - 7200000).toLocaleTimeString() + ",admin@solarai.com,EXPORT,Failed Retry,127.0.0.1";
 
             return {
                 data: mockCSV,

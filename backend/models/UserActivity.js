@@ -10,6 +10,10 @@ const userActivitySchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    userEmail: {
+        type: String,
+        required: false // Optional for backward compatibility with old logs
+    },
     action: {
         type: String,
         enum: ['LOGIN', 'SIGNUP', 'PAGE_VISIT', 'LOGOUT'],

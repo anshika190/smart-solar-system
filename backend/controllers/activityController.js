@@ -39,12 +39,16 @@ const exportLogsCSV = async (req, res) => {
         const activities = await UserActivity.find().sort({ timestamp: -1 });
 
         // Define CSV Headers
-        const headers = ['Timestamp (IST)', 'User Name', 'Action', 'Details', 'IP Address'];
+        const headers = ['Date', 'Time', 'User Email', 'Action', 'Details', 'IP Address'];
         const rows = activities.map(log => {
-            const dateIST = new Date(log.timestamp).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
+            const dateObj = new Date(log.timestamp);
+            const dateStr = dateObj.toLocaleDateString('en-IN', { timeZone: 'Asia/Kolkata' });
+            const timeStr = dateObj.toLocaleTimeString('en-IN', { timeZone: 'Asia/Kolkata' });
+
             return [
-                dateIST,
-                log.userName,
+                dateStr,
+                timeStr,
+                log.userEmail || log.userName, // Fallback to name if email not captured in old logs
                 log.action,
                 JSON.stringify(log.details || {}).replace(/,/g, ';'), // Escape commas for CSV
                 log.ipAddress || 'Unknown'
