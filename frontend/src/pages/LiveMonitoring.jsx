@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Sun, Wind, Thermometer, Battery, Zap, Activity, RotateCw, CloudRain, CheckCircle, AlertTriangle, MapPin, Navigation, ArrowRight } from 'lucide-react';
-import SmartEVSystem from '../components/SmartEVSystem';
 import './LiveMonitoring.css';
 
 const LiveMonitoring = () => {
