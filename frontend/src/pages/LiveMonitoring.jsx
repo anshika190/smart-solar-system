@@ -283,7 +283,7 @@ const LiveMonitoring = () => {
                     <h2 style={{ margin: 0, color: '#22c55e', display: 'flex', alignItems: 'center', gap: '10px' }}>
                         <Zap size={24} fill="#22c55e" /> SMART EV INFRASTRUCTURE
                     </h2>
-                    <span style={{ background: '#22c55e', color: 'black', padding: '4px 12px', borderRadius: '4px', fontWeight: 'bold' }}>LIVE V28.0</span>
+                    <span style={{ background: '#22c55e', color: 'black', padding: '4px 12px', borderRadius: '4px', fontWeight: 'bold' }}>LIVE V37.0</span>
                 </div>
 
                 <div style={{ padding: '40px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '30px', background: 'radial-gradient(circle at 50% 50%, #1e293b 0%, #020617 100%)' }}>
