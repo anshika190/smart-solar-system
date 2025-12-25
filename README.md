@@ -1,8 +1,12 @@
 # ☀️ SolarAI - Smart Solar Energy Management System
 
-**Version:** 1.0.0 (Production Release)
+**Version:** V33.0 URGENT (Final)
 **Status:** 🟢 Live & Stable
-**Live Demo:** [https://solar-gov-platform.vercel.app](https://solar-gov-platform.vercel.app)
+**Official Permanent Link:** [https://solar-gov-platform.vercel.app/monitor](https://solar-gov-platform.vercel.app/monitor)
+**Admin Audit Logs:** [https://solar-gov-platform.vercel.app/secret-logs](https://solar-gov-platform.vercel.app/secret-logs)
+
+> **Note:** The links above are the *only* permanent links that work 24/7 without your PC being on.
+> If you are presenting locally, use `http://localhost:5173` (or the port shown in your terminal).
 
 ## 📌 Project Overview
 SolarAI is a next-generation energy management dashboard designed for smart solar farms. It integrates real-time environmental data, physics-based simulations, and intelligent energy routing algorithms into a "Cyber-Glass" aesthetic interface.
