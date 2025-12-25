@@ -1,19 +1,11 @@
 {
     "rewrites": [
         {
-            "source": "/secret-logs",
-            "destination": "/index.html"
-        },
-        {
-            "source": "/monitor",
-            "destination": "/index.html"
-        },
-        {
             "source": "/assets/(.*)",
             "destination": "/assets/$1"
         },
         {
-            "source": "/(.*)",
+            "source": "/((?!.*\\.).*)",
             "destination": "/index.html"
         }
     ],
