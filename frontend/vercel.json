@@ -1,21 +1,23 @@
 {
     "rewrites": [
         {
+            "source": "/secret-logs",
+            "destination": "/index.html"
+        },
+        {
+            "source": "/monitor",
+            "destination": "/index.html"
+        },
+        {
+            "source": "/assets/(.*)",
+            "destination": "/assets/$1"
+        },
+        {
             "source": "/(.*)",
             "destination": "/index.html"
         }
     ],
-    "headers": [
-        {
-            "source": "/(.*).html",
-            "headers": [
-                {
-                    "key": "Cache-Control",
-                    "value": "public, max-age=0, must-revalidate"
-                }
-            ]
-        }
-    ],
+    "cleanUrls": true,
     "framework": "vite",
     "buildCommand": "npm run build",
     "outputDirectory": "dist"
