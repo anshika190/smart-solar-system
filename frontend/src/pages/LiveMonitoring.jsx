@@ -161,7 +161,7 @@ const LiveMonitoring = () => {
         <div className="dashboard-container">
             <div className="dashboard-header">
                 <div>
-                    <h1>System Control Center (V30.0 FINAL)</h1>
+                    <h1>System Control Center (V33.0 URGENT)</h1>
                     <p className="subtitle">Live Operational Status</p>
                 </div>
                 <div className="status-badge">
