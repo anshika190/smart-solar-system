@@ -98,7 +98,7 @@ const SystemReports = () => {
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'end', marginBottom: '2.5rem' }}>
                 <div>
                     <h1 style={{ fontSize: '2.5rem', fontWeight: '800', background: 'linear-gradient(to right, #fff, #94a3b8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', marginBottom: '0.5rem' }}>
-                        System Reports <span style={{ fontSize: '1rem', background: '#eab308', WebkitTextFillColor: 'black', padding: '4px 8px', borderRadius: '8px', verticalAlign: 'middle', fontWeight: 'bold' }}>v5.0 (SECURE)</span>
+                        System Reports <span style={{ fontSize: '1rem', background: '#eab308', WebkitTextFillColor: 'black', padding: '4px 8px', borderRadius: '8px', verticalAlign: 'middle', fontWeight: 'bold' }}>v6.0 (LIVE)</span>
                     </h1>
                     <p style={{ color: '#94a3b8', fontSize: '1.1rem' }}>
                         Automated daily performance archives and efficiency analysis.
